@@ -12,7 +12,7 @@
 
 	<body>
 		<div class="container" id="app">
-		<button class="btn btn-danger">{{logoutLabel}}</button>
+		<button class="btn btn-danger" id="logout">{{logoutLabel}}</button>
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="logo"><img :src="logo"></div> 
@@ -37,7 +37,7 @@
 						<td>{{index+1}}</td>
 						<td>{{info}}</td>
 						<td v-for="name in radioButtonsName">
-							<input type="radio" name="{{name}}">
+							<input type="radio" v-bind:name="name">
 						</td>
 					</tr>
 				</table>
