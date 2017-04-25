@@ -1,0 +1,40 @@
+#app {
+	text-align: center;
+}
+
+.webName {
+	margin: 20px 0;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.loginForm {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.term {
+	margin-bottom: 12px;
+}
+
+.welcomeText {
+	font-size: 2rem;
+	margin-bottom: 15px;
+}
+
+.subjectsTable {
+	text-align: center;
+}
+
+.howto {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #444;
+}
+
+#logout {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
