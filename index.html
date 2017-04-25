@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>KU Assessment</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=480, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no" />
+		
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+
+	<body>
+		<div class="container" id="app">
+		<button class="btn btn-danger">{{logoutLabel}}</button>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="logo"><img :src="logo"></div> 
+					<div class="webName">{{webName}}</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					ประเมินรายวิชา {{subjectId}} {{subjectName}} หมู่เรียน {{sectionId}}
+				</div>
+			</div>
+			<div class="assessTable">
+				<table>
+					<tr>
+						<th rowspan="2">{{orderHeaderLabel}}</th>
+						<th rowspan="2">{{infoHeaderLabel}}</th>
+						<th colspan="5">{{levelHeaderLabel}}</th>
+					</tr>
+						<th v-for="level in levelsLabel">{{level}}</th>
+					</tr>
+					<tr v-for="(info, index) in infosLabel">
+						<td>{{index+1}}</td>
+						<td>{{info}}</td>
+						<td v-for="name in radioButtonsName">
+							<input type="radio" name="{{name}}">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<button class="btn btn-success">{{submitLabel}}</button>
+					<button class="btn btn-warning">{{cancelLabel}}</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/main.js"></script>
+	</body>
+</html>
