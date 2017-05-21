@@ -27,25 +27,25 @@
 			<div class="assessTable">
 				<table>
 					<tr>
-						<th rowspan="2">{{orderHeaderLabel}}</th>
+						<th rowspan="2" class="order-head">{{orderHeaderLabel}}</th>
 						<th rowspan="2">{{infoHeaderLabel}}</th>
 						<th colspan="5">{{levelHeaderLabel}}</th>
 					</tr>
-						<th v-for="level in levelsLabel">{{level}}</th>
+						<th class="level-head" v-for="level in levelsLabel">{{level}}</th>
 					</tr>
 					<tr v-for="(info, index) in infosLabel">
-						<td>{{index+1}}</td>
+						<td class="order">{{index+1}}</td>
 						<td>{{info}}</td>
-						<td v-for="name in radioButtonsName">
-							<input type="radio" v-bind:name="name">
+						<td class="level" v-for="name in radioButtonsName">
+							<input type="radio" v-model="radioDatas[index]" v-bind:name="index" v-bind:value="name">
 						</td>
 					</tr>
 				</table>
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<button class="btn btn-success">{{submitLabel}}</button>
-					<button class="btn btn-warning">{{cancelLabel}}</button>
+					<button class="btn btn-success" v-on:click="backToKeygen">{{submitLabel}}</button>
+					<button class="btn btn-warning" v-on:click="cancel">{{cancelLabel}}</button>
 				</div>
 			</div>
 		</div>
