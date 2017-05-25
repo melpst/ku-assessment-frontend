@@ -17,7 +17,7 @@ var app = new Vue({
     subjectName: 'Laws & Ethics in Information Technology',
     radioButtonsName: ['great','good','fair','bad','worst'],
     radioDatas: [],
-    keygenIP : 'http://158.108.34.51'
+    keygenIP : 'http://158.108.34.51:8080'
   },
   methods:{
     submitAssess: function(argument) {
